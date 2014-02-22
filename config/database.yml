@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: adventure_library_development
+  database: date_planner_development
   pool: 5
   host: localhost
   port: 5432
@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: adventure_library_test
+  database: date_planner_test
   pool: 5
   host: localhost
   port: 5432
@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: adventure_library_production
+  database: date_planner_production
   pool: 5
   host: localhost
   port: 5432
