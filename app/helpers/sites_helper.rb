@@ -1,2 +1,2 @@
-module SiteHelper
+module SitesHelper
 end

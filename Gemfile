@@ -6,7 +6,6 @@ gem 'rails', '4.0.2'
 
 gem 'devise'
 gem 'pg'
-gem 'pry'
 gem 'json'
 gem 'typhoeus'
 
