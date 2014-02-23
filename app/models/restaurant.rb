@@ -1,3 +1,4 @@
 class Restaurant < ActiveRecord::Base
-  belongs_to :itinerary
+  has_many :restaurants_itineraries
+  has_many :itineraries, through: :restaurants_itineraries
 end

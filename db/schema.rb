@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140222005728) do
+ActiveRecord::Schema.define(version: 20140223231918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "funcheaps", force: true do |t|
+    t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "itinerary_id"
@@ -24,17 +25,39 @@ ActiveRecord::Schema.define(version: 20140222005728) do
 
   add_index "funcheaps", ["itinerary_id"], name: "index_funcheaps_on_itinerary_id", using: :btree
 
+  create_table "funcheaps_itineraries", force: true do |t|
+    t.integer  "funcheap_id"
+    t.integer  "itinerary_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "funcheaps_itineraries", ["funcheap_id"], name: "index_funcheaps_itineraries_on_funcheap_id", using: :btree
+  add_index "funcheaps_itineraries", ["itinerary_id"], name: "index_funcheaps_itineraries_on_itinerary_id", using: :btree
+
   create_table "itineraries", force: true do |t|
+    t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "restaurants", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "itinerary_id"
   end
 
   add_index "restaurants", ["itinerary_id"], name: "index_restaurants_on_itinerary_id", using: :btree
+
+  create_table "restaurants_itineraries", force: true do |t|
+    t.integer  "restaurant_id"
+    t.integer  "itinerary_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "restaurants_itineraries", ["itinerary_id"], name: "index_restaurants_itineraries_on_itinerary_id", using: :btree
+  add_index "restaurants_itineraries", ["restaurant_id"], name: "index_restaurants_itineraries_on_restaurant_id", using: :btree
 
 end
