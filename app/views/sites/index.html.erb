@@ -1,2 +1,66 @@
-<h1>sites#index</h1>
+<div class="container">
+
+<!-- Top div for search filters -->
+  <div class="row">
+    <!-- Day filter -->
+    <div class="col-sm-4 col-sm-offset-1">
+      <div class="input-group">
+        <input type="text" class="form-control" value="Today">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Day <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Today</a></li>
+            <li><a href="#">Tomorrow</a></li>
+            <li><a href="#">Weekend</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Monday</a></li>
+            <li><a href="#">Tuesday</a></li>
+            <li><a href="#">Wednesday</a></li>
+            <li><a href="#">Thursday</a></li>
+            <li><a href="#">Friday</a></li>
+            <li><a href="#">Saturday</a></li>
+            <li><a href="#">Sunday</a></li>
+          </ul>
+        </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+    </div><!-- /.col-sm-4 -->
+    <!-- Activity filter -->
+    <div class="col-sm-4">
+      <div class="input-group">
+        <input type="text" class="form-control" value="Events">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Activity <span class="caret"></span></button>
+          <ul class="dropdown-menu pull-right">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Restuarants</a></li>
+            <li><a href="#">Concerts</a></li>
+          </ul>
+        </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+    </div><!-- /.col-sm-4 -->
+    <div class="col-sm-2">
+      <div class="itinerary">
+        <a href="#openModal">View Itinerary</a>
+      </div>
+    </div>
+  </div><!-- /.row -->
+
+  <br>
+  <br>
+
+  <!-- Main div for results list and map -->
+  <div class="row">
+    <div class="rightdiv col-sm-4">
+      <h4>Search Results:</h4>
+      <div class="results">
+        Some event in San Francisco<br>
+        Some other event in San Francisco
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div id="map-canvas"></div>
+    </div>
+  </div>
+
+</div>
 

@@ -1,0 +1,20 @@
+.itinerary {
+  /*border: solid;*/
+  text-align: right;
+}
+
+.rightdiv {
+  border: solid;
+  height: 550px;
+}
+
+.results {
+  border: solid;
+  height: 507px;
+  overflow: scroll;
+}
+
+#map-canvas {
+  border: solid;
+  height: 550px;
+}
