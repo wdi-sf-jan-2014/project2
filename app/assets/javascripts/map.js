@@ -1,6 +1,7 @@
  
       console.log("RUNNING MAP.js");
-      function initialize() {
+     $(function(){
+        function initialize() {
         console.log("RUNNING INITIALIZATION");
         var mapOptions = {
           center: new google.maps.LatLng(37.7833, 122.4167),
@@ -65,3 +66,4 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 
       console.log("HELLO WORLD!!!")
+    });
