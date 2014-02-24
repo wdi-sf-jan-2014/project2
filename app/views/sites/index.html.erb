@@ -51,6 +51,21 @@
     </div>
   </div><!-- /.row -->
 
+  <div class="container">
+    <%= form_for(@yelpfind) do |f| %>
+      <%= f.text_field :searchterm, placeholder: "What are you craving?" %><br />
+      <%= f.text_field :address, placeholder: "Street Address" %><br />
+      <%= f.text_field :city, placeholder: "City" %><br />
+      <%= f.text_field :state, placeholder: "State" %><br />
+      <%= f.text_field :zipcode, placeholder: "5-digit Zipcode" %><br />
+      <%= f.label "Search Radius: " %>
+      <%= f.select :searchradius, options_for_select([["Tenth Mile", 0.1], ["Quarter Mile", 0.25], ["Half Mile", 0.5], ["1 Mile", 1], ["5 Miles", 5], ["10 Miles", 10], ["25 Miles", 25]]) %><br />
+      <%= f.label "Number of Results: " %>
+      <%= f.select :resultslimit, options_for_select([["5", 5], ["10", 10], ["25", 25]]) %><br />
+      <%= f.submit "Search for Restuarants" %>
+    <% end %> 
+  </div>
+
   <br>
   <br>
 
@@ -59,7 +74,13 @@
     <div class="rightdiv col-sm-4">
       <h4>Search Results:</h4>
       <div class="results">
-        
+        <table class="table table-striped">
+          <% @restaurants.each do |restaurant| %>
+            <tr>
+              <td><%= restaurant.name %> <div class="addToButton"><button type="button" class="addToItinerary btn btn-default btn-xs">Add to Itinerary</button></div></td> 
+            </tr>
+          <% end %>
+        </table>
       </div>
     </div>
     <div class="col-sm-8">
