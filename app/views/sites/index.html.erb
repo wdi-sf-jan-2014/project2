@@ -40,6 +40,7 @@
       <%= f.select :searchradius, options_for_select([["Tenth Mile", 0.1], ["Quarter Mile", 0.25], ["Half Mile", 0.5], ["1 Mile", 1], ["5 Miles", 5], ["10 Miles", 10], ["25 Miles", 25]]) %><br />
       <%= f.label "Number of Results: " %>
       <%= f.select :resultslimit, options_for_select([["5", 5], ["10", 10], ["25", 25]]) %><br />
+      <%= f.submit "Search for Restuarants" %>
     <% end %> 
   </div>
 
@@ -51,8 +52,16 @@
     <div class="rightdiv col-sm-4">
       <h4>Search Results:</h4>
       <div class="results">
-        Some event in San Francisco<br>
-        Some other event in San Francisco
+        <% @results.each do |r| %>
+          <ol>Result <%= r.id %><br />
+            <ul>
+              <li>Name: <%= r.name %></li>
+              <li>Address: <%= r.full_address %></li>
+              <li>Latitude: <%= r.latitude %></li>
+              <li>Longitude: <%= r.longitude %></li>
+            </ul>
+          </ol>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-8">
