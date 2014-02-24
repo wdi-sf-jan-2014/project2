@@ -1,3 +1,8 @@
+.dayfilter {
+  text-align: right;
+  padding-top: 8px;
+}
+
 .itinerary {
   /*border: solid;*/
   text-align: right;

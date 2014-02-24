@@ -24,7 +24,7 @@ gem 'sidekiq'
 
 gem 'rails_12factor', :group => :production
 
-
+gem 'handlebars_assets'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
