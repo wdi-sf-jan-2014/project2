@@ -61,3 +61,4 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
 
+      console.log("HELLO WORLD!!!")
