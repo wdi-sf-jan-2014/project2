@@ -14,6 +14,13 @@ $(function() {
 });
 
 
-// $(function(){
-  
-// });
+$(function(){
+  $(".addToItinerary").on("click", function(event){
+    event.preventDefault();
+    // console.log('hooray!');
+
+    
+    $("#myItinerary").append("hello");
+
+  });  
+});

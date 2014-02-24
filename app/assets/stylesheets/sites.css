@@ -19,7 +19,16 @@
   overflow: scroll;
 }
 
+table {
+  /*border: solid;*/
+}
+
+.addToButton {
+  text-align: right;
+}
+
 #map-canvas {
   border: solid;
   height: 550px;
 }
+
