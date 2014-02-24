@@ -29,6 +29,12 @@
     </div>
   </div><!-- /.row -->
 
+  <div class="container">
+    <%= form_for(@yelpfind) do |f| %>
+      <%= f.text_field :date, placeholder: "Select Date" %>
+    <% end %> 
+  </div>
+
   <br>
   <br>
 

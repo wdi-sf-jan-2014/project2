@@ -1,0 +1,2 @@
+class YelpfindsController < ApplicationController
+end
