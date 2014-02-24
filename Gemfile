@@ -10,6 +10,11 @@ gem 'json'
 gem 'typhoeus'
 gem 'jquery-ui-rails' # gem needed for datepicker functionality
 
+# gems needed for yelp API
+gem 'yelpster', '~> 1.2.0'
+gem 'oauth'
+gem 'geocoder' # To populate latitude and longitude from address field
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
