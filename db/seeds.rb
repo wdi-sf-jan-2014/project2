@@ -18,11 +18,11 @@ f3 = Funcheap.create(event: "bowling")
 f4 = Funcheap.create(event: "dancing")
 f5 = Funcheap.create(event: "hiking")
 
-i1 = Itinerary.create(date: "02-23-2014")
-i2 = Itinerary.create(date: "02-24-2014")
-i3 = Itinerary.create(date: "02-25-2014")
-i4 = Itinerary.create(date: "02-26-2014")
-i5 = Itinerary.create(date: "02-27-2014")
+i1 = Itinerary.create(date: "2014-02-23")
+i2 = Itinerary.create(date: "2014-02-23")
+i3 = Itinerary.create(date: "2014-02-23")
+i4 = Itinerary.create(date: "2014-02-23")
+i5 = Itinerary.create(date: "2014-02-23")
 
 i1.restaurants << r1
 i1.funcheaps << f1
