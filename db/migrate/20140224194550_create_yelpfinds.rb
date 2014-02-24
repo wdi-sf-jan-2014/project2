@@ -6,7 +6,7 @@ class CreateYelpfinds < ActiveRecord::Migration
     	t.string :city
     	t.string :state
     	t.integer :zipcode
-    	t.integer :searchradius
+    	t.float :searchradius
     	t.integer :resultslimit
 
       t.timestamps

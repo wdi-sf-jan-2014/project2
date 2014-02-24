@@ -2,6 +2,7 @@ DatePlannerApp::Application.routes.draw do
   root to: "sites#index"
 
   get '/wingman', to: "sites#index", as: :wingman
+  post '/yelpfinds', to: 'yelpfinds#create'
 
   resources :itineraries 
 

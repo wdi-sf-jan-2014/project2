@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140224194550) do
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
-    t.integer  "searchradius"
+    t.float    "searchradius"
     t.integer  "resultslimit"
     t.datetime "created_at"
     t.datetime "updated_at"
