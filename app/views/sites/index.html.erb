@@ -4,7 +4,7 @@
   <div class="row">
     <!-- Day filter -->
     <div class="col-sm-4 col-sm-offset-1">
-      <%= form_for :itinerary, url: "/itineraries" do |f| %>
+      <%= form_for(@itinerary) do |f| %>
         <%= f.text_field :date, placeholder: "Select Date" %>
       <% end %> 
     </div><!-- /.col-sm-4 -->

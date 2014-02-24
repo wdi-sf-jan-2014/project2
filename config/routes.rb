@@ -3,17 +3,18 @@ DatePlannerApp::Application.routes.draw do
 
   get '/wingman', to: "sites#index", as: :wingman
 
-  resources :intineraries 
+  resources :itineraries 
 
+#           root GET    /                               sites#index
+#        wingman GET    /wingman(.:format)              sites#index
+#    itineraries GET    /itineraries(.:format)          itineraries#index
+#                POST   /itineraries(.:format)          itineraries#create
+#  new_itinerary GET    /itineraries/new(.:format)      itineraries#new
+# edit_itinerary GET    /itineraries/:id/edit(.:format) itineraries#edit
+#      itinerary GET    /itineraries/:id(.:format)      itineraries#show
+#                PATCH  /itineraries/:id(.:format)      itineraries#update
+#                PUT    /itineraries/:id(.:format)      itineraries#update
+#                DELETE /itineraries/:id(.:format)      itineraries#destroy
 
-# get "/wingman", to: "sites#index"
-# get "/intineraries", to: "intineraries#index"
-# post "/intineraries", to: "intineraries#create"
-# get "/intineraries/new", to: "intineraries#new"
-# get "/intineraries/:id/edit", to: "intineraries#edit"
-# get "/intineraries/:id", to: "intineraries#show"
-# patch "/intineraries/:id", to: "intineraries#update"
-# put "/intineraries/:id", to: "intineraries#update"
-# delete "/intineraries/:id", to: "intineraries#destroy"
   
 end

@@ -9,4 +9,10 @@ function initialize(){
 
 }
 
+
 $(document).on('ready page:load', initialize);
+
+// initiating datepicker functionality
+$(function() {
+	$("#itinerary_date").datepicker();
+});
