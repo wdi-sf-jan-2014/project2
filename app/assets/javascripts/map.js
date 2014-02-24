@@ -1,6 +1,5 @@
- 
+
       console.log("RUNNING MAP.js");
-     $(function(){
         function initialize() {
         console.log("RUNNING INITIALIZATION");
         var mapOptions = {
@@ -66,4 +65,3 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 
       console.log("HELLO WORLD!!!")
-    });
