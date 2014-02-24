@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140223231918) do
   enable_extension "plpgsql"
 
   create_table "funcheaps", force: true do |t|
-    t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "itinerary_id"
@@ -36,13 +35,11 @@ ActiveRecord::Schema.define(version: 20140223231918) do
   add_index "funcheaps_itineraries", ["itinerary_id"], name: "index_funcheaps_itineraries_on_itinerary_id", using: :btree
 
   create_table "itineraries", force: true do |t|
-    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "restaurants", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "itinerary_id"
