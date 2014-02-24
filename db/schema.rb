@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140223231918) do
   add_index "funcheaps_itineraries", ["itinerary_id"], name: "index_funcheaps_itineraries_on_itinerary_id", using: :btree
 
   create_table "itineraries", force: true do |t|
-    t.string   "date"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

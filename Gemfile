@@ -8,6 +8,7 @@ gem 'devise'
 gem 'pg'
 gem 'json'
 gem 'typhoeus'
+gem 'jquery-ui-rails' # gem needed for datepicker functionality
 
 group :test, :development do
   gem 'rspec-rails'
