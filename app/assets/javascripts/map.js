@@ -36,6 +36,7 @@
             data: {text:'<h4>San Francisco'+i+'</h4><i>Nice city!</i>'},
             title: i.toString()
           });
+          console.log(marker)
 
          google.maps.event.addListener(marker, 'click', function() { 
           onItemClick(event, this);   
