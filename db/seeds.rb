@@ -6,11 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 r1 = Restaurant.create(name: "McDonalds")
 r2 = Restaurant.create(name: "Panera")
 r3 = Restaurant.create(name: "The Melt")
 r4 = Restaurant.create(name: "Starbucks")
 r5 = Restaurant.create(name: "Zeke's")
+r6 = Restaurant.create(name: "Chipotle")
+r7 = Restaurant.create(name: "Taco Bell")
+r8 = Restaurant.create(name: "Philz Coffee")
+r9 = Restaurant.create(name: "Round Table")
 
 f1 = Funcheap.create(event: "concert")
 f2 = Funcheap.create(event: "movie")
