@@ -14,13 +14,17 @@ $(function() {
 });
 
 
+// to add an event or restaurant to itinerary
 $(function(){
   $(".addToItinerary").on("click", function(event){
     event.preventDefault();
-    // console.log('hooray!');
 
-    
-    $("#myItinerary").append("hello");
+    var result = $(this).parent().siblings().text();
+    console.log(result);
+
+    $("#myItinerary").append(result + "<br>");
 
   });  
 });
+
+

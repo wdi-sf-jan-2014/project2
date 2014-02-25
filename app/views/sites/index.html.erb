@@ -38,7 +38,7 @@
             <div class="modal-body">
               <!-- append each event/restaurant here -->
               <div id="myItinerary">
-                ...
+                <br>
               </div>
             </div>
             <div class="modal-footer">
@@ -78,7 +78,7 @@
         <table class="table table-striped">
           <% @results.each do |r| %>
             <tr>
-              <td><%= r.name %> <div class="addToButton"><button type="button" class="addToItinerary btn btn-default btn-xs">Add to Itinerary</button></div></td> 
+              <td><div class="resultName"><%= r.name %></div><div class="addToButton"><button type="button" class="addToItinerary btn btn-default btn-xs">Add to Itinerary</button></div></td> 
             </tr>
           <% end %>
         </table>

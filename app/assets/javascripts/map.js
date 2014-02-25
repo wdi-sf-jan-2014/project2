@@ -70,6 +70,7 @@ function onItemClick(event, pin) {
   infowindow.setContent(contentString); 
   infowindow.setPosition(pin.position); 
   infowindow.open(map);
+  event.preventDefault();
 }   
   
   // var infowindow = new google.maps.InfoWindow({
