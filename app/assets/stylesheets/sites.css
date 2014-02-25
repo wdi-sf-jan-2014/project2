@@ -32,3 +32,12 @@ table {
   height: 550px;
 }
 
+/*styling for signin page*/
+#sign_in_page {
+  text-align: center;
+}
+
+.alert{
+  text-align: center;
+}
+
