@@ -26,23 +26,44 @@ function initialize() {
   //Get all entries from the DB matching the selections
   //Loop through them, placing markers
 
-  for (var i = 0; i < 5; i++) {
-
-    var position = new google.maps.LatLng(
-      southWest.lat() + latSpan * Math.random(),
-      southWest.lng() + lngSpan * Math.random());
-    marker = new google.maps.Marker({
-      position: position,
-      map: map,
-      data: {text:'<h4>San Francisco'+i+'</h4><i>Nice city!</i>'},
-      title: i.toString()
+  $.ajax({
+    url: "/wingman.json",
+    type: "GET"
+  }).done(function(data) {
+    $(data).each(function(index, result) {
+      var position = new google.maps.LatLng(
+        result.latitude,
+        result.longitude
+      );
+      marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        data: {text: "<h4>"+result.name+"</h4><br /><p>"+result.full_address+"</p>"},
+        title: result.name
+      });
+      google.maps.event.addListener(marker, 'click', function() { 
+        onItemClick(event, this);
+      });
     });
+  });
 
-   google.maps.event.addListener(marker, 'click', function() { 
-    onItemClick(event, this);   
-  });  
+  // for (var i = 0; i < 5; i++) {
+
+  //   var position = new google.maps.LatLng(
+  //     southWest.lat() + latSpan * Math.random(),
+  //     southWest.lng() + lngSpan * Math.random());
+  //   marker = new google.maps.Marker({
+  //     position: position,
+  //     map: map,
+  //     data: {text:'<h4>San Francisco'+i+'</h4><i>Nice city!</i>'},
+  //     title: i.toString()
+  //   });
+
+  //  google.maps.event.addListener(marker, 'click', function() { 
+  //   onItemClick(event, this);   
+  // });  
   
-}
+
   
 function onItemClick(event, pin) { 
   var contentString = pin.data.text;

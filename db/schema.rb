@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20140224212752) do
 
   # These are extensions that must be enabled in order to support this database
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 20140224212752) do
     t.integer  "user_id"
   end
 
-
   add_index "itineraries", ["user_id"], name: "index_itineraries_on_user_id", using: :btree
 
   create_table "restaurant_results", force: true do |t|
@@ -61,7 +59,6 @@ ActiveRecord::Schema.define(version: 20140224212752) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "restaurants", force: true do |t|
     t.string   "name"
@@ -107,6 +104,9 @@ ActiveRecord::Schema.define(version: 20140224212752) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
   create_table "yelpfinds", force: true do |t|
     t.string   "searchterm"
     t.string   "address"
@@ -118,10 +118,5 @@ ActiveRecord::Schema.define(version: 20140224212752) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
 
 end
