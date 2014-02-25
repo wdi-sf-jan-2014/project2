@@ -1,13 +1,13 @@
 DatePlannerApp::Application.routes.draw do
   devise_for :users
-  root to: "sites#index"
+  root to: 'sites#index'
 
-  get '/wingman', to: "sites#index", as: :wingman
+  get '/wingman', to: 'sites#index', as: :wingman
   post '/yelpfinds', to: 'yelpfinds#create'
   get '/funcheaps', to: 'funcheaps#perform_scrape'
   post '/funcheaps', to: 'funcheaps#create'
 
-  resources :itineraries 
+  resources :itineraries, :users
 
   # get    '/users/sign_in',        to: 'devise/sessions#new', as: :new_user_session
   # post   '/users/sign_in',        to: 'devise/sessions#create', as: :user_session

@@ -1,3 +1,4 @@
+/*styling for home page*/
 .dayfilter {
   text-align: right;
   padding-top: 8px;
@@ -32,7 +33,7 @@ table {
   height: 550px;
 }
 
-/*styling for signin page*/
+/*styling for signin/singup pages*/
 #sign_in_page {
   text-align: center;
 }
