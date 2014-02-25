@@ -36,7 +36,9 @@ class YelpfindsController < ApplicationController
 	 		result.concat_full_address
 	 		result.save
 	 	end
-
+	 	FuncheapResult.all.each do |record|
+         		     record.destroy
+	 	end
 	 	redirect_to wingman_path
 
 	end

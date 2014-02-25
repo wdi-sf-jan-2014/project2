@@ -1,0 +1,2 @@
+module FuncheapsHelper
+end
