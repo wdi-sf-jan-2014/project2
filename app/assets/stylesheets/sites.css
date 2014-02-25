@@ -24,6 +24,7 @@ body{
 .itinerary {
   /*border: solid;*/
   text-align: right;
+  float: right;
 }
 
 .rightdiv {
