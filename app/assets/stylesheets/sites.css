@@ -1,6 +1,24 @@
+body{
+  padding-bottom: 40px;
+}
+
 .dayfilter {
-  text-align: right;
-  padding-top: 8px;
+  /*text-align: right;*/
+}
+
+.date-field-label {
+  display: inline-block;
+  font-size: 20px;
+}
+
+.date-field {
+  display: inline-block;
+  width: 150px;
+  height: 35px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
 }
 
 .itinerary {
@@ -30,5 +48,39 @@ table {
 #map-canvas {
   border: solid;
   height: 550px;
+}
+
+/* ##### STYLING FOR YELP QUERY FIELDS ##### */
+
+.input-field {
+  display: inline-block;
+  width: 250px;
+  height: 35px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.select-field-label {
+  display: inline-block;
+  width: 150px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.select-field {
+  display: inline-block;
+  width: 100px;
+  margin-top: 10px;
+  padding: 4px;
+  font-size: 20px;
+}
+
+.yelp-search-btn {
+  display: inline-block;
+  width: 250px;
+  margin-top: 10px;
 }
 

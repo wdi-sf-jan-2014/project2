@@ -21,8 +21,8 @@
     <!-- Day filter -->
     <div class="dayfilter col-sm-4 col-sm-offset-1">
       <%= form_for :itinerary, url: "/funcheaps" do |f| %>
-        <%= f.label "Date:" %>
-        <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y") %>
+        <%= f.label "Date:", class: "date-field-label" %>
+        <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y"), class: "date-field" %>
         <%= f.submit "Search for Events", class: "btn btn-primary" %>
       <% end %> 
     </div><!-- /.col-sm-4 -->
@@ -53,21 +53,9 @@
         </div>
       </div><!-- /Modal -->
     </div>
-  
-    <!-- Restaurant query filter -->
-    <div class="col-sm-4">
-      <%= form_for(@yelpfind) do |f| %>
-        <%= f.text_field :searchterm, placeholder: "What are you craving?" %><br />
-        <%= f.text_field :address, placeholder: "Street Address" %><br />
-        <%= f.text_field :city, placeholder: "City" %><br />
-        <%= f.text_field :state, placeholder: "State" %><br />
-        <%= f.text_field :zipcode, placeholder: "5-digit Zipcode" %><br />
-        <%= f.label "Search Radius: " %>
-        <%= f.select :searchradius, options_for_select([["Tenth Mile", 0.1], ["Quarter Mile", 0.25], ["Half Mile", 0.5], ["1 Mile", 1], ["5 Miles", 5], ["10 Miles", 10], ["25 Miles", 25]]) %><br />
-        <%= f.label "Number of Results: " %>
-        <%= f.select :resultslimit, options_for_select([["5", 5], ["10", 10], ["15", 15], ["20", 20]]) %><br />
-        <%= f.submit "Search for Restuarants", id: "yelpquery" %>
-      <% end %> 
+
+    <!-- div for fading in and out of restaurant query form html -->
+    <div id="restaurantForm">
     </div>
 
   </div><!-- /.row -->
