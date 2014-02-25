@@ -5,7 +5,7 @@ class SitesController < ApplicationController
         @restaurants = Restaurant.all
         @yelpfind = Yelpfind.new
 
-        if RestaurantResult != []
+        if RestaurantResult.all.empty?
             @results = FuncheapResult.all
         else
             @results = RestaurantResult.all
