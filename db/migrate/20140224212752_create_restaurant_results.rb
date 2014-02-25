@@ -12,6 +12,7 @@ class CreateRestaurantResults < ActiveRecord::Migration
     	t.string :rating_img
       t.float :latitude
       t.float :longitude
+      t.string :date
 
       t.timestamps
     end

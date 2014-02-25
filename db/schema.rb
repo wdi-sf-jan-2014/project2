@@ -11,13 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224212752) do
+ActiveRecord::Schema.define(version: 20140225032303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "funcheap_results", force: true do |t|
+    t.text     "name"
+    t.text     "full_address"
+    t.text     "date"
+    t.string   "logo"
+    t.string   "rating_img"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "funcheaps", force: true do |t|
-    t.string   "event"
+    t.text     "event_title"
+    t.text     "address"
+    t.text     "date"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "itinerary_id"
@@ -56,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140224212752) do
     t.string   "rating_img"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

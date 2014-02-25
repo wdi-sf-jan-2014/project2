@@ -4,9 +4,10 @@
   <div class="row">
     <!-- Day filter -->
     <div class="dayfilter col-sm-4 col-sm-offset-1">
-      <%= form_for(@itinerary) do |f| %>
+      <%= form_for :itinerary, url: "/funcheaps" do |f| %>
         <%= f.label "Date:" %>
         <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y") %>
+        <%= f.submit "Search for Events", class: "btn btn-primary" %>
       <% end %> 
     </div><!-- /.col-sm-4 -->
     <!-- Activity filter -->
