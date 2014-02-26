@@ -25,8 +25,8 @@ class ItineraryWorker
                 # event_desc = result_page.search(".clearfloat > p").text.strip
                 # Save to the model
                 unless address == nil #address might be empty ""; check that out later
-                    event = Funcheap.find_or_create_by(event_title: event_title)
-                    event.address = address
+                    event = Funcheap.find_or_create_by(name: event_title)
+                    event.full_address = address
                     event.date = event_date
                     # event.description = event_desc
                     event.save
