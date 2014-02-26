@@ -19,12 +19,15 @@ $(function(){
   $(".addToItinerary").on("click", function(event){
     event.preventDefault();
 
-    var event = {};
+    // Del's refactored code
+    // var result = $(this).closest(".result").find(".resultName").clone().appendTo("#myItinerary");
+    // console.log(result);
+    // $("#myItinerary").append(result + "<br/>"); 
 
-    var result = $(this).closest(".result").find(".resultName").clone().appendTo("#myItinerary");
-    console.log(result);
+    obj ={};
 
-    // $("#myItinerary").append(result + "<br/>");
+    var activity_type = $(".form-control").val();
+    console.log(activity_type);
 
   });  
 });
