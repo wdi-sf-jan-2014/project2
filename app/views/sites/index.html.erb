@@ -19,11 +19,13 @@
     </div><!-- /.col-sm-4 -->
 
     <!-- Day filter -->
-    <div class="dayfilter col-sm-4 col-sm-offset-1">
-      <%= form_for :itinerary, url: "/funcheaps" do |f| %>
-        <%= f.label "Date:", class: "date-field-label" %>
-        <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y"), class: "date-field" %>
-      <% end %> 
+    <div class="col-sm-4 col-sm-offset-1">
+      <div class="dayfilter">
+        <%= form_for :itinerary, url: "/funcheaps" do |f| %>
+          <%= f.label "Date:", class: "date-field-label" %>
+          <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y"), class: "date-field" %>
+        <% end %>
+      </div>
       <button id="search_button" class="btn btn-primary btn-search">Search</button>
     </div><!-- /.col-sm-4 -->
      

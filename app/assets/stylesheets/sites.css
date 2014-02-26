@@ -3,7 +3,8 @@ body{
 }
 
 .dayfilter {
-  /*text-align: right;*/
+  display: inline-block;
+  float: left;
 }
 
 .date-field-label {
@@ -87,4 +88,5 @@ table {
 
 .btn-search {
   display: inline-block;
+  /*float: right;*/
 }

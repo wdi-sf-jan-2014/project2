@@ -1,4 +1,4 @@
-$(function() {
+function initialize() {
 
   $("ul#select_source a").click(function(eventObject) {
     eventObject.preventDefault();
@@ -22,8 +22,6 @@ $(function() {
       console.log("No clue, mo-fo!");
     } 
   });
-
-  
 
   // Populate results list and Google Map based on user search terms
   $("#search_button").click(function(eventObject) {
@@ -68,12 +66,10 @@ $(function() {
 
         infowindow = new google.maps.InfoWindow(); 
 
-        marker = [];
-
         // Iterate through the returned JSON object (as "data")
         $(data).each(function(index, result) {
 
-          // Use Handlebars to display the parameters of the "todo" in variable "data" to the html browser
+          // Use Handlebars to display the parameters of the "result" in variable "data" to the html browser
           var resultsHTML = HandlebarsTemplates.result_list(result);
           $("#resultsTable").append(resultsHTML);
 
@@ -98,4 +94,30 @@ $(function() {
 
   });
 
-});
+   // Define the Google Map
+        var mapOptions = {
+          center: new google.maps.LatLng(37.7833, 122.4167),
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        var southWest = new google.maps.LatLng(37.708894, -122.516908);
+        var northEast = new google.maps.LatLng(37.815832, -122.343358);
+
+        var bounds = new google.maps.LatLngBounds(southWest, northEast);
+          map.fitBounds(bounds);
+
+        var lngSpan = northEast.lng() - southWest.lng();
+        var latSpan = northEast.lat() - southWest.lat();
+
+        infowindow = new google.maps.InfoWindow(); 
+
+  function onItemClick(event, pin) { 
+    var contentString = pin.data.text;
+    infowindow.setContent(contentString); 
+    infowindow.setPosition(pin.position); 
+    infowindow.open(map);
+    event.preventDefault();
+  }
+
+}
+google.maps.event.addDomListener(window, 'load', initialize);
