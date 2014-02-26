@@ -1,3 +1,4 @@
+/*styling for home page*/
 body{
   padding-bottom: 40px;
 }
@@ -52,6 +53,23 @@ table {
   height: 550px;
 }
 
+/*styling for signin/singup pages*/
+#sign_in_page {
+  text-align: center;
+}
+
+#sign_up_page {
+  text-align: center;
+}
+
+.alert{
+  text-align: center;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
 /* ##### STYLING FOR YELP QUERY FIELDS ##### */
 
 .input-field {
@@ -88,5 +106,5 @@ table {
 
 .btn-search {
   display: inline-block;
-  /*float: right;*/
 }
+

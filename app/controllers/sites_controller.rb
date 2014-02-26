@@ -12,7 +12,6 @@ class SitesController < ApplicationController
     else
       @results = RestaurantResult.all
     end
-
     respond_to do |f|
       f.html
       f.json { render :json => @results, only: [:name, :full_address, :date, :logo, :rating_img, :latitude, :longitude] }

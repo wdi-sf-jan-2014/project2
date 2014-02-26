@@ -24,6 +24,7 @@ class YelpfindsController < ApplicationController
 
 	 	response["businesses"].each do |r|
 	 		result = RestaurantResult.create(
+	 			yelp_id: r["yelp_id"]
 	 			name: r["name"],
 	 			address: r["location"]["address"].first,
 	 			city: r["location"]["city"],
