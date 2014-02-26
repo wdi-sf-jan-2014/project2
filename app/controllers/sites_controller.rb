@@ -1,5 +1,7 @@
 class SitesController < ApplicationController
 
+  include Yelp::V2::Search::Request
+
   def index
     @itinerary = Itinerary.new
     @restaurants = Restaurant.all

@@ -23,6 +23,28 @@ $(function() {
     } 
   });
 
+  // Define the Google Map
+  var mapOptions = {
+    center: new google.maps.LatLng(37.7833, 122.4167),
+    zoom: 8
+  };
+  var map = new google.maps.Map(document.getElementById("map-canvas"),
+      mapOptions);
+
+  var southWest = new google.maps.LatLng(37.708894, -122.516908);
+  var northEast = new google.maps.LatLng(37.815832, -122.343358);
+
+  var bounds = new google.maps.LatLngBounds(southWest, northEast);
+  map.fitBounds(bounds);
+
+  var lngSpan = northEast.lng() - southWest.lng();
+  var latSpan = northEast.lat() - southWest.lat();
+
+  infowindow = new google.maps.InfoWindow(); 
+
+  marker = [];
+
+  // Populate results list and Google Map based on user search terms
   $("#search_button").click(function(eventObject) {
     eventObject.preventDefault();
     var date = $('#itinerary_date').val();
@@ -37,6 +59,7 @@ $(function() {
       rq.zipcode = $("#yelpfind_zipcode").val();
       rq.searchradius = $("#yelpfind_searchradius").val();
       rq.resultslimit = $("#yelpfind_resultslimit").val();
+      console.log(rq);
 
       $.ajax({
         url: "/wingman.json",
