@@ -52,12 +52,8 @@
     <div class="rightdiv col-sm-4">
       <h4>Search Results:</h4>
       <div class="results">
-        <table class="table table-striped">
-          <% @results.each do |r| %>
-            <tr>
-              <td><div class="resultName"><%= r.name %></div><div class="addToButton"><button type="button" class="addToItinerary btn btn-default btn-xs">Add to Itinerary</button></div></td> 
-            </tr>
-          <% end %>
+        <table id="resultsTable" class="table table-striped">
+          <!-- data to be populated from Handlebars template result_list.hbs -->
         </table>
       </div>
     </div> <!-- /Results div -->
