@@ -85,3 +85,6 @@ table {
   margin-top: 10px;
 }
 
+.btn-search {
+  display: inline-block;
+}

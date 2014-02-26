@@ -23,8 +23,8 @@
       <%= form_for :itinerary, url: "/funcheaps" do |f| %>
         <%= f.label "Date:", class: "date-field-label" %>
         <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y"), class: "date-field" %>
-        <%= f.submit "Search for Events", class: "btn btn-primary" %>
       <% end %> 
+      <button id="search_button" class="tn btn-primary btn-search">Search</button>
     </div><!-- /.col-sm-4 -->
     
     <div class="col-sm-2">
