@@ -2,70 +2,46 @@
 
 <!-- Top div for search filters -->
   <div class="row">
-    <!-- Day filter -->
-    <div class="dayfilter col-sm-4 col-sm-offset-1">
-      <%= form_for :itinerary, url: "/funcheaps" do |f| %>
-        <%= f.label "Date:" %>
-        <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y") %>
-        <%= f.submit "Search for Events", class: "btn btn-primary" %>
-      <% end %> 
-    </div><!-- /.col-sm-4 -->
+
     <!-- Activity filter -->
     <div class="col-sm-4">
       <div class="input-group">
-        <input type="text" class="form-control" value="Events">
+        <input type="text" id="activity_selector" class="form-control" placeholder="What would you like to do?">
         <div class="input-group-btn">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Activity <span class="caret"></span></button>
-          <ul class="dropdown-menu pull-right">
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Restuarants</a></li>
+          <ul id="select_source" class="dropdown-menu pull-right">
+            <li><a href="#">Fun & Cheap</a></li>
+            <li><a href="#">Restaurants</a></li>
             <li><a href="#">Concerts</a></li>
           </ul>
         </div><!-- /btn-group -->
       </div><!-- /input-group -->
     </div><!-- /.col-sm-4 -->
+
+    <!-- Day filter -->
+    <div class="dayfilter col-sm-4 col-sm-offset-1">
+      <%= form_for :itinerary, url: "/funcheaps" do |f| %>
+        <%= f.label "Date:", class: "date-field-label" %>
+        <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y"), class: "date-field" %>
+        <%= f.submit "Search for Events", class: "btn btn-primary" %>
+      <% end %> 
+    </div><!-- /.col-sm-4 -->
+    
     <div class="col-sm-2">
       <div class="itinerary">
-        <a href="#" data-toggle="modal" data-target="#itineraryModal">View Itinerary</a>
+        <a href="#itineraryModal" role="button" class="btn btn-lg btn-success" data-toggle="modal">View Itinerary</a>
       </div>
-      <!-- Modal -->
-      <div class="modal fade" id="itineraryModal" tabindex="-1" role="dialog" aria-labelledby="itineraryModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="itineraryModalLabel">Itinerary</h4>
-            </div>
-            <div class="modal-body">
-              <!-- append each event/restaurant here -->
-              <div id="myItinerary">
-                <br>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div><!-- /Modal -->
+      <!-- modal for VIEW ITINERARY -->
+      <%= render partial: "itineraries/viewItineraryModal" %>
     </div>
+
+    <!-- div for fading in and out of restaurant query form html -->
+    <div id="restaurantForm">
+    </div>
+
   </div><!-- /.row -->
 
-  <div class="container">
-    <%= form_for(@yelpfind) do |f| %>
-      <%= f.text_field :searchterm, placeholder: "What are you craving?" %><br />
-      <%= f.text_field :address, placeholder: "Street Address" %><br />
-      <%= f.text_field :city, placeholder: "City" %><br />
-      <%= f.text_field :state, placeholder: "State" %><br />
-      <%= f.text_field :zipcode, placeholder: "5-digit Zipcode" %><br />
-      <%= f.label "Search Radius: " %>
-      <%= f.select :searchradius, options_for_select([["Tenth Mile", 0.1], ["Quarter Mile", 0.25], ["Half Mile", 0.5], ["1 Mile", 1], ["5 Miles", 5], ["10 Miles", 10], ["25 Miles", 25]]) %><br />
-      <%= f.label "Number of Results: " %>
-      <%= f.select :resultslimit, options_for_select([["5", 5], ["10", 10], ["15", 15], ["20", 20]]) %><br />
-      <%= f.submit "Search for Restuarants", id: "yelpquery" %>
-    <% end %> 
-  </div>
+  
 
   <br>
   <br>
