@@ -3,6 +3,7 @@ $(function() {
   // Populate results list and Google Map based on user search terms
   $("#search_button").click(function(eventObject) {
     eventObject.preventDefault();
+    clearMarkers();
     var eq = {};
     eq.date = $('#itinerary_date').val();
     eq.source = $("input#activity_selector").val();
@@ -16,9 +17,11 @@ $(function() {
       eq.zipcode = $("#yelpfind_zipcode").val();
       eq.searchradius = $("#yelpfind_searchradius").val();
       eq.resultslimit = $("#yelpfind_resultslimit").val();
-      console.log(rq);
+      console.log(eq);
     }
-    else if (eq.source === "Fun & Cheap") {}
+    else if (eq.source === "Fun & Cheap") {
+      console.log("searching funcheaps");
+    }
 
     $.ajax({
       url: "/wingman.json",
@@ -40,7 +43,7 @@ $(function() {
         $("#resultsTable").append(resultsHTML);
         
         // Populate the Google Map with markers from "result" object
-        initialize.setMarker(result);
+        setMarker(result);
       });
     });
 

@@ -63,7 +63,7 @@ class SitesController < ApplicationController
     # If source is Fund & Cheap...  
     elsif search_params[:source] == "Fun & Cheap"
       # Creat the funcheap search results
-      date_obj = Date.strptime(query["date"], '%m/%d/%Y')
+      date_obj = Date.strptime(search_params[:date], '%m/%d/%Y')
       formated_date = date_obj.strftime("%A, %B %-d, %Y")
       
       results = Funcheap.where(date: formated_date)
