@@ -22,7 +22,6 @@ $(function(){
     // Del's refactored code
     var result = $(this).closest(".result").find(".resultName").clone().appendTo("#myItinerary");
     // console.log(result);
-    // $("#myItinerary").append(result + "<br/>"); 
 
     var object ={};
     var activity_type = $(".form-control").val();
