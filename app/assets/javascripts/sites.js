@@ -20,17 +20,25 @@ $(function(){
     event.preventDefault();
 
     // Del's refactored code
-    // var result = $(this).closest(".result").find(".resultName").clone().appendTo("#myItinerary");
+    var result = $(this).closest(".result").find(".resultName").clone().appendTo("#myItinerary");
     // console.log(result);
     // $("#myItinerary").append(result + "<br/>"); 
 
-    obj ={};
-
+    var object ={};
     var activity_type = $(".form-control").val();
-    console.log(activity_type);
+    var date = $("#itinerary_date").val();
+
+    $.ajax({
+      type: 'POST',
+      url: '/itineraries',
+      data: { object: {source: activity_type, date: date} }
+    }).done(function(){
+      $("#myItinerary").append(result + "<br>");
+    });
 
   });  
 });
+
 
 // to save itinerary to user
 $(function(){
