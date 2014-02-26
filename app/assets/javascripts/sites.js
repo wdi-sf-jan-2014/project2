@@ -29,8 +29,8 @@ $(function(){
     var date = $("#itinerary_date").val();
 
     $.ajax({
-      type: 'POST',
-      url: '/itineraries',
+      type: 'post',
+      url: '/itineraries.json',
       data: { object: {source: activity_type, date: date} }
     }).done(function(){
       $("#myItinerary").append(result + "<br>");
