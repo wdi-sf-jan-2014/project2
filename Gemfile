@@ -27,6 +27,10 @@ end
 gem 'unicorn'
 
 gem 'sidekiq'
+gem 'sidetiq'
+gem "ice_cube", "~> 0.11.3"
+gem 'sinatra', require: false
+gem 'slim'
 
 gem 'rails_12factor', :group => :production
 
