@@ -39,12 +39,12 @@
             <div class="modal-body">
               <!-- append each event/restaurant here -->
               <div id="myItinerary">
-                <br>
+          
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="saveItinerary btn btn-primary">Save Itinerary</button>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
         <table class="table table-striped">
           <% @results.each do |r| %>
             <tr>
-              <td><div class="resultName"><%= r.name %></div><div class="addToButton"><button type="button" class="addToItinerary btn btn-default btn-xs">Add to Itinerary</button></div></td> 
+              <td class="result"><div data-id="<%= r.id %>" class="resultName"><%= r.name %></div><div class="addToButton"><button type="button" class="addToItinerary btn btn-default btn-xs">Add to Itinerary</button></div></td> 
             </tr>
           <% end %>
         </table>

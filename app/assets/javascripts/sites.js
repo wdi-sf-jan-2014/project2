@@ -19,12 +19,26 @@ $(function(){
   $(".addToItinerary").on("click", function(event){
     event.preventDefault();
 
-    var result = $(this).parent().siblings().text();
+    var event = {};
+
+    var result = $(this).closest(".result").find(".resultName").clone().appendTo("#myItinerary");
     console.log(result);
 
-    $("#myItinerary").append(result + "<br>");
+    // $("#myItinerary").append(result + "<br/>");
 
   });  
 });
 
+// to save itinerary to user
+$(function(){
+  $(".saveItinerary").on("click", function(){
+    event.preventDefault();
+
+
+    var newItinerary = $(".modal-body").text();
+    console.log(newItinerary);
+
+    $(".myItineraries").append(newItinerary);
+  });
+});
 
