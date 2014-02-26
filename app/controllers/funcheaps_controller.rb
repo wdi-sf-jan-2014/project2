@@ -10,16 +10,13 @@ class FuncheapsController < ApplicationController
         Funcheap.all.each do |f|
             if f.date != nil || f.date == "" && search_date == Date.parse(f.date)
                 FuncheapResult.create(
-                    name: f.event_title,
-                    full_address: f.address,
+                    name: f.name,
+                    full_address: f.full_address,
                     date: f.date,
                     latitude: f.latitude,
                     longitude: f.longitude
                     )
             end
-        end
-        RestaurantResult.all.each do |record|
-            record.destroy
         end
         redirect_to wingman_path
     end
@@ -38,8 +35,8 @@ class FuncheapsController < ApplicationController
             event_date = result_page.search("#stats .left > a").text
             # event_desc = result_page.search(".clearfloat > p").text.strip
             # Save to the model
-            event = Funcheap.find_or_create_by(event_title: event_title)
-            event.address = address
+            event = Funcheap.find_or_create_by(name: event_title)
+            event.full_address = address
             event.date = event_date
             # event.description = event_desc
             event.save

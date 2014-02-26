@@ -16,7 +16,12 @@ function initialize() {
   infowindow = new google.maps.InfoWindow(); 
 
 
-  var setMarker = function(position, result) {
+  var setMarker = function(result) {
+    // Populate Google Map with markers
+    var position = new google.maps.LatLng(
+      result.latitude,
+      result.longitude
+    );
     marker = new google.maps.Marker({
       position: position,
       map: map,

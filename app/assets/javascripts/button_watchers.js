@@ -1,3 +1,4 @@
+$(function() {
   $("ul#select_source a").click(function(eventObject) {
     eventObject.preventDefault();
     if ($(this).text() === "Fun & Cheap") {
@@ -20,3 +21,4 @@
       console.log("No clue, mo-fo!");
     } 
   });
+});
