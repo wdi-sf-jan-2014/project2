@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20140225032303) do
   end
 
   create_table "funcheaps", force: true do |t|
-    t.text     "event_title"
-    t.text     "address"
+    t.text     "name"
+    t.text     "full_address"
     t.text     "date"
     t.float    "latitude"
     t.float    "longitude"
