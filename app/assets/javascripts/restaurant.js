@@ -26,9 +26,13 @@ $(function() {
     $.ajax({
       url: "/wingman.json",
       type: "POST",
-      data: { query: eq }
+      data: { query: eq },
+      beforeSend: function() {
+        $("#spinwheel").show();
+      }
     }).done(function(data) {
       console.log(data);
+      $("#spinwheel").hide();
       // Clear the results list table
       $("#resultsTable").empty();
 
