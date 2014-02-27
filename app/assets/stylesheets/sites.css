@@ -1,6 +1,6 @@
 /*styling for home page*/
 body{
-  padding-bottom: 40px;
+  padding-bottom: 100px;
 }
 
 /* ##### BEGIN styling for NavBar ##### */
@@ -120,12 +120,12 @@ color: #555;
 }
 
 .leftdiv {
-  height: 550px;
+  height: 500px;
   margin: 0;
 }
 
 .rightdiv {
-  height: 550px;
+  height: 500px;
   margin: 0;
 }
 
