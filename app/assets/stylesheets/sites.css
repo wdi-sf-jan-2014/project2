@@ -189,23 +189,28 @@ table {
 }
 
 .profile_container {
-  background-color: rgba(255,255,255,.6);
+  background-color: rgba(255,255,255,.8);
   border-radius: 15px;
   padding-bottom: 25px;
   font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
 }
 
-h2 {
+h2.user_email {
   font-family: 'Varela Round', sans-serif;
+  font-size: 35px;
 }
 
-h3 {
+h3#heading {
   font-family: 'Varela Round', sans-serif;
   margin-top: 0px;
+  font-size: 30px;
 }
 
 h4 {
   font-family: 'Varela Round', sans-serif;
+  font-weight: bolder;
+  font-size: 25px;
 }
 
 thead {
