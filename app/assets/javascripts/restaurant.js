@@ -9,8 +9,6 @@ var search_initialize = function() {
     eq.date = $('#itinerary_date').val();
     eq.source = $("input#activity_selector").val();
     if (eq.source === "Restaurants") {
-      console.log("searching restaurants");
-      
       eq.searchterm = $("#yelpfind_searchterm").val();
       eq.address = $("#yelpfind_address").val();
       eq.city = $("#yelpfind_city").val();
@@ -18,10 +16,8 @@ var search_initialize = function() {
       eq.zipcode = $("#yelpfind_zipcode").val();
       eq.searchradius = $("#yelpfind_searchradius").val();
       eq.resultslimit = $("#yelpfind_resultslimit").val();
-      console.log(eq);
     }
     else if (eq.source === "Fun & Cheap") {
-      console.log("searching funcheaps");
     }
 
     $.ajax({
@@ -32,7 +28,6 @@ var search_initialize = function() {
         $("#spinwheel").show();
       }
     }).done(function(data) {
-      console.log(data);
       $("#spinwheel").hide();
       // Clear the results list table
       $("#resultsTable").empty();
@@ -54,27 +49,21 @@ var search_initialize = function() {
       // Add event listener for button click and add to Itinerary
       $(".addToItinerary").on("click", function(event){
         event.preventDefault();
-        console.log("hello");
-        console.log($(this));
+
         var recordDetail = {};
         recordDetail.event_type = eq.source;
         recordDetail.date = eq.date;
         recordDetail.id = $(this).attr("data-id");
-        console.log(recordDetail);
 
         $.ajax({
           url: "/itineraries.json",
           type: "POST",
           data: { record: recordDetail }
         }).done(function(data) {
-          console.log(data);
-
           var record = {};
           record.date = eq.date;
           record.name = data.name;
           record.full_address = data.full_address;
-          console.log(record);
-
           currentItinerary.push(record);
 
           // Use Handlebars to display the parameters of the "record" to the html itinerary modal
@@ -95,8 +84,6 @@ $(document).on('ready page:load', search_initialize);
 $(function() {
   $("#emailButton").on("click", function(event){
     event.preventDefault();
-    console.log("EMAIl BUTTON!");
-    console.log(currentItinerary);
     $.ajax({
           url: "/senditineraries.json",
           type: "post",
