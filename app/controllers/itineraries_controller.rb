@@ -1,6 +1,17 @@
 class ItinerariesController < ApplicationController
   before_filter :authenticate_user!, only: [:create]
 
+  def index
+    itinerary = params.permit(records: [:date, :name, :full_address])["records"]
+    recipient = current_user.email
+    ShareMailer.share_email(current_user, recipient, itinerary).deliver
+
+    respond_to do |format|
+      format.json {render json: ""}
+    end
+  end
+
+
   def create
     # new_itinerary = params.require(:itinerary).permit(:date)
     record_params = params.require(:record).permit(:event_type, :date, :id)

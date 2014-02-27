@@ -8,5 +8,7 @@ var site_initialize = function() {
 
 };
 
+
 $(document).on('ready page:load', site_initialize);
+
 

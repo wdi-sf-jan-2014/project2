@@ -1,3 +1,4 @@
+var currentItinerary = [];
 var search_initialize = function() {
 
   // Populate results list and Google Map based on user search terms
@@ -74,6 +75,8 @@ var search_initialize = function() {
           record.full_address = data.full_address;
           console.log(record);
 
+          currentItinerary.push(record);
+
           // Use Handlebars to display the parameters of the "record" to the html itinerary modal
           var recordHTML = HandlebarsTemplates.view_itinerary(record);
           $("#myItinerary").append(recordHTML);
@@ -83,9 +86,23 @@ var search_initialize = function() {
       });
 
     });
-
   });
-
 };
 
 $(document).on('ready page:load', search_initialize);
+
+// Watching for share email button press
+$(function() {
+  $("#emailButton").on("click", function(event){
+    event.preventDefault();
+    console.log("EMAIl BUTTON!");
+    console.log(currentItinerary);
+    $.ajax({
+          url: "/senditineraries.json",
+          type: "post",
+          dataType: 'json',
+          contentType: 'application/json',
+          data: JSON.stringify({ records: currentItinerary })
+        });
+  });
+});
