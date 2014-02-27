@@ -1,4 +1,4 @@
-$(function() {
+var search_initialize = function() {
 
   // Populate results list and Google Map based on user search terms
   $("#search_button").click(function(eventObject) {
@@ -86,4 +86,6 @@ $(function() {
 
   });
 
-});
+};
+
+$(document).on('ready page:load', search_initialize);

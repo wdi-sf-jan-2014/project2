@@ -9,7 +9,7 @@ var clearMarkers = function() {
   markers = [];
 };
 
-var initialize = function() {
+var map_initialize = function() {
 
   var mapOptions = {
     center: new google.maps.LatLng(37.7833, 122.4167),
@@ -54,5 +54,4 @@ function onItemClick(event, pin) {
   infowindow.open(map);
 }  
 
-
-google.maps.event.addDomListener(window, 'load', initialize);
+$(document).on('ready page:load', map_initialize);
