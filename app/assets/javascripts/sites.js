@@ -11,7 +11,9 @@
 // initiating datepicker functionality
 $(function() {
 	$("#itinerary_date").datepicker();
+
 });
+
 
 
 // to add an event or restaurant to itinerary

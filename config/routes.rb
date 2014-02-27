@@ -11,6 +11,7 @@ DatePlannerApp::Application.routes.draw do
 
 
   resources :itineraries, :users
+  post '/senditineraries', to: 'itineraries#index'
 
   # get    '/users/sign_in',        to: 'devise/sessions#new', as: :new_user_session
   # post   '/users/sign_in',        to: 'devise/sessions#create', as: :user_session
