@@ -23,6 +23,25 @@ body{
 color: #62C861;
 }
 
+.navbar-default .navbar-nav>.open>a:focus {
+color: #555;
+background-color: #62C861;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+color: white;
+text-decoration: none;
+background-color: #62C861;
+}
+
+.navbar-nav>li>.dropdown-menu {
+margin-top: 0;
+border-top-right-radius: 0;
+border-top-left-radius: 0;
+background-color: #62C861;
+color: #555;
+}
+
 
 /*----- end Bootstrap CSS --------------------------------------------- */
 
