@@ -1,4 +1,4 @@
-$(function() {
+var search_initialize = function() {
 
   // Populate results list and Google Map based on user search terms
   $("#search_button").click(function(eventObject) {
@@ -26,9 +26,13 @@ $(function() {
     $.ajax({
       url: "/wingman.json",
       type: "POST",
-      data: { query: eq }
+      data: { query: eq },
+      beforeSend: function() {
+        $("#spinwheel").show();
+      }
     }).done(function(data) {
       console.log(data);
+      $("#spinwheel").hide();
       // Clear the results list table
       $("#resultsTable").empty();
 
@@ -82,4 +86,6 @@ $(function() {
 
   });
 
-});
+};
+
+$(document).on('ready page:load', search_initialize);

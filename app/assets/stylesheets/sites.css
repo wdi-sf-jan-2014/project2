@@ -3,6 +3,73 @@ body{
   padding-bottom: 40px;
 }
 
+/* ##### BEGIN styling for NavBar ##### */
+
+/* ----- modified Bootstrap CSS ------------------------------------- */
+
+.navbar-default .navbar-brand {
+  color: #777;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 30px;
+  color: white;
+  font-weight: normal;
+  margin-top: 30px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+color: #62C861;
+}
+
+
+/*----- end Bootstrap CSS --------------------------------------------- */
+
+.nav-contain {
+  min-height: 80px;
+  background-color: #0c1125;
+}
+
+.brand-container {
+  width: 450px;
+}
+
+.wingman-logo {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: 'Monoton', cursive;
+  font-size: 50px;
+  color: white;
+}
+
+.signup-btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 40px;
+}
+
+.signin-field {
+  display: inline-block;
+  width: 200px;
+  height: 34px;
+  padding: 8px;
+  border: 2px solid gray;
+  margin-top: 30px;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.signin-btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* ##### END styling for NavBar ##### */
+
 .dayfilter {
   display: inline-block;
   float: left;
@@ -79,7 +146,7 @@ table {
 
 .input-field {
   display: inline-block;
-  width: 250px;
+  width: 280px;
   height: 35px;
   padding: 8px;
   margin-top: 10px;
@@ -111,5 +178,11 @@ table {
 
 .btn-search {
   display: inline-block;
+}
+
+.spinwheel-holder {
+  display:inline-block;
+  position: relative;
+  text-align: center;
 }
 

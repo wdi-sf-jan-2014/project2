@@ -1,9 +1,0 @@
-<h1>Here A List of Scraped Events</h1>
-
-<div>
-<% @details.each do |event| %>
-    <p>Event: </p><%= event.css(".title a").text %><br>
-    <%= event.css(".cost") %><br>
-    <p>Description: </p><%= event.css("p") %><br>
-<% end %>
-</div>
