@@ -5,6 +5,14 @@ body{
 
 /* ##### BEGIN styling for NavBar ##### */
 
+.navbar-default .navbar-brand {
+  color: #777;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
 .nav-contain {
   min-height: 80px;
   background-color: #2c120f;
