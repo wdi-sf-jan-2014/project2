@@ -1,25 +1,4 @@
 class FuncheapsController < ApplicationController
-    def create
-        date_params = params.require(:itinerary).permit(:date)
-        a = date_params[:date].split("/")
-        search_date = Date.new(a[2].to_i, a[0].to_i, a[1].to_i)
-        FuncheapResult.all.each do |record|
-            record.destroy
-        end
-
-        Funcheap.all.each do |f|
-            if f.date != nil || f.date == "" && search_date == Date.parse(f.date)
-                FuncheapResult.create(
-                    name: f.name,
-                    full_address: f.full_address,
-                    date: f.date,
-                    latitude: f.latitude,
-                    longitude: f.longitude
-                    )
-            end
-        end
-        redirect_to wingman_path
-    end
 
     def perform_scrape
         agent = Mechanize.new

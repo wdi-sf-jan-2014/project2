@@ -6,7 +6,7 @@ class ItineraryWorker
     include Sidekiq::Worker
     include Sidetiq::Schedulable
 
-    recurrence { daily }
+    recurrence { hourly }
 
     def perform_scrape
         agent = Mechanize.new
