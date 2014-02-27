@@ -3,6 +3,24 @@ body{
   padding-bottom: 40px;
 }
 
+/* ##### BEGIN styling for NavBar ##### */
+
+.signin-field {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  padding: 8px;
+  border: 2px solid gray;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.signin-btn {
+  display: inline-block;
+}
+
+/* ##### END styling for NavBar ##### */
+
 .dayfilter {
   display: inline-block;
   float: left;

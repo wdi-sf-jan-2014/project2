@@ -1,4 +1,5 @@
 class SitesController < ApplicationController
+  include SitesHelper
 
   include Yelp::V2::Search::Request
 
