@@ -41,7 +41,7 @@ class SitesController < ApplicationController
       results = RestaurantResult.all
 
       respond_to do |f|
-        f.json { render :json => results, only: [:id, :name, :full_address, :logo, :rating_img, :latitude, :longitude] }
+        f.json { render :json => results, only: [:id, :name, :full_address, :website, :logo, :rating_img, :latitude, :longitude] }
       end
 
     # If source is Fund & Cheap...  

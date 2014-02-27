@@ -9,6 +9,7 @@ var button_initialize = function() {
     else if ($(this).text() === "Restaurants") {
       console.log("restaurants, mo-fo!");
       $("input#activity_selector").val("Restaurants");
+      $("#restaurantForm").empty();
       var restaurantQueryHTML = HandlebarsTemplates.restaurant_query();
       $("#restaurantForm").append(restaurantQueryHTML);
     }
