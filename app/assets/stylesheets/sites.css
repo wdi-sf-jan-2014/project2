@@ -6,7 +6,9 @@ body{
 /* ##### BEGIN styling for NavBar ##### */
 
 .nav-contain {
-  height: 80px;
+  min-height: 80px;
+  background-color: #2c120f;
+  background-color: #0c1125;
 }
 
 .brand-container {
@@ -31,7 +33,7 @@ body{
 .signin-field {
   display: inline-block;
   width: 200px;
-  height: 30px;
+  height: 34px;
   padding: 8px;
   border: 2px solid gray;
   margin-top: 30px;
@@ -119,7 +121,7 @@ table {
 
 .input-field {
   display: inline-block;
-  width: 250px;
+  width: 280px;
   height: 35px;
   padding: 8px;
   margin-top: 10px;
