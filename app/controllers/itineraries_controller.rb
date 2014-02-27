@@ -2,6 +2,7 @@ class ItinerariesController < ApplicationController
   before_filter :authenticate_user!, only: [:create]
 
   def create
+    # new_itinerary = params.require(:itinerary).permit(:date)
     record_params = params.require(:record).permit(:event_type, :date, :id)
     id = record_params[:id].to_i
     i = current_user.itineraries.create(date: record_params[:date])
@@ -41,4 +42,5 @@ class ItinerariesController < ApplicationController
       
     end
   end
+
 end

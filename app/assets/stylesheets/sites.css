@@ -30,13 +30,14 @@ body{
 }
 
 .rightdiv {
-  border: solid;
+  /*border: solid;*/
   height: 550px;
 }
 
 .results {
   border: solid;
   height: 507px;
+  margin-bottom: 0px;
   overflow: scroll;
 }
 
@@ -70,6 +71,10 @@ table {
   padding: 20px;
 }
 
+/* Styling for profile page */
+#profile_page {
+  background-image: url(../images/sfcity.jpg);
+}
 /* ##### STYLING FOR YELP QUERY FIELDS ##### */
 
 .input-field {

@@ -6,5 +6,4 @@ class UsersController < ApplicationController
     @events = current_user.itineraries.sort{|event1, event2| event1[:date] <=> event2[:date]}
   end
 
-
 end

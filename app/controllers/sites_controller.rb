@@ -2,10 +2,6 @@ class SitesController < ApplicationController
 
   include Yelp::V2::Search::Request
 
-  def index
-   
-  end
-
   def create
     search_params = params.require(:query).permit(:source, :date, :searchterm, :address, :city, :state, :zipcode, :searchradius, :resultslimit)
     # If source is Resaurants...
