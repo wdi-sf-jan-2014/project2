@@ -45,6 +45,39 @@ $(function() {
         // Populate the Google Map with markers from "result" object
         setMarker(result);
       });
+
+      // Add event listener for button click and add to Itinerary
+      $(".addToItinerary").on("click", function(event){
+        event.preventDefault();
+        console.log("hello");
+        console.log($(this));
+        var recordDetail = {};
+        recordDetail.event_type = eq.source;
+        recordDetail.date = eq.date;
+        recordDetail.id = $(this).attr("data-id");
+        console.log(recordDetail);
+
+        $.ajax({
+          url: "/itineraries.json",
+          type: "POST",
+          data: { record: recordDetail }
+        }).done(function(data) {
+          console.log(data);
+
+          var record = {};
+          record.date = eq.date;
+          record.name = data.name;
+          record.full_address = data.full_address;
+          console.log(record);
+
+          // Use Handlebars to display the parameters of the "record" to the html itinerary modal
+          var recordHTML = HandlebarsTemplates.view_itinerary(record);
+          $("#myItinerary").append(recordHTML);
+        }).fail(function() {
+          window.location.href = "/users/sign_in";
+        });
+      });
+
     });
 
   });
