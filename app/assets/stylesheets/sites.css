@@ -5,18 +5,45 @@ body{
 
 /* ##### BEGIN styling for NavBar ##### */
 
+.nav-contain {
+  height: 80px;
+}
+
+.brand-container {
+  width: 450px;
+}
+
+.wingman-logo {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: 'Monoton', cursive;
+  font-size: 50px;
+  color: white;
+}
+
+.signup-btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 40px;
+}
+
 .signin-field {
   display: inline-block;
-  width: 50px;
-  height: 25px;
+  width: 200px;
+  height: 30px;
   padding: 8px;
   border: 2px solid gray;
+  margin-top: 30px;
+  margin-left: 10px;
   border-radius: 4px;
   font-size: 14px;
 }
 
 .signin-btn {
   display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 /* ##### END styling for NavBar ##### */
