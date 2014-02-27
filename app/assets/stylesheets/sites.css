@@ -139,9 +139,41 @@ table {
 }
 
 /* Styling for profile page */
-#profile_page {
-  background-image: url(../images/sfcity.jpg);
+.profile_page {
+  background: url(http://i.imgur.com/0KhcPr9.jpg) no-repeat center center fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+.profile_container {
+  background-color: rgba(255,255,255,.6);
+  border-radius: 15px;
+  padding-bottom: 25px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+h2 {
+  font-family: 'Varela Round', sans-serif;
+}
+
+h3 {
+  font-family: 'Varela Round', sans-serif;
+  margin-top: 0px;
+}
+
+h4 {
+  font-family: 'Varela Round', sans-serif;
+}
+
+thead {
+  text-decoration: underline;
+}
+
+#heading {
+
+}
+
 /* ##### STYLING FOR YELP QUERY FIELDS ##### */
 
 .input-field {

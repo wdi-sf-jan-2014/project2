@@ -1,17 +1,19 @@
-<div class="container" id="profile_page">
-  <h3>Hello <%= @user.email %>'s</h3> <br>
-  <h4>Here is your list of itineraries:</h4>
+<body class="profile_page">
+<div class="container profile_container">
+  <h2><%= @user.email %></h2>
+  <h3 id="heading">My itineraries:</h3>
 
-  <div class="myItineraries">
-    <table>
+  <!-- itinerary table -->
+  <div>
+    <table id="my_itineraries" class="col-sm-8 col-sm-offset-2">
       <colgroup>
-        <col class="col-sm-4" />
-        <col class="col-sm-8" />
+        <col class="col-sm-3" />
+        <col class="col-sm-7" />
       </colgroup>
       <thead>
         <tr>
-          <td><h3>Date</h3></td>
-          <td><h3>Activity</h3></td>
+          <td><h4>Date</h4></td>
+          <td><h4>Activity</h4></td>
         </tr>
       </thead>
       <tbody>
@@ -34,7 +36,7 @@
               <td><%= f.name %></td>
             <% end %>
             <% i.restaurants.each do |r| %>
-              <td><%= r.name %></td>
+              <td><%= r.name %> : <%= r.full_address %></td>
             <% end %>
           </tr>
           <% end %>
@@ -43,5 +45,6 @@
       </tbody>
     </table>
   </div>
-  
+ 
 </div>
+</body>
