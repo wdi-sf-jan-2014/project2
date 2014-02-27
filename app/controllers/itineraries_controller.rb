@@ -1,14 +1,6 @@
 class ItinerariesController < ApplicationController
   before_filter :authenticate_user!, only: [:create]
 
-  def index
-    @itineraries = Itinerary.all
-  end
-
-  def new
-    @itinerary = Itinerary.new
-  end
-
   def create
     record_params = params.require(:record).permit(:event_type, :date, :id)
     id = record_params[:id].to_i
