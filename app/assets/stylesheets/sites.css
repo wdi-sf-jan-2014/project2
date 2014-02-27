@@ -163,3 +163,9 @@ table {
   display: inline-block;
 }
 
+.spinwheel-holder {
+  display:inline-block;
+  position: relative;
+  text-align: center;
+}
+
