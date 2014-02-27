@@ -120,12 +120,12 @@ color: #555;
 }
 
 .leftdiv {
-  height: 500px;
+  height: 550px;
   margin: 0;
 }
 
 .rightdiv {
-  height: 500px;
+  height: 550px;
   margin: 0;
 }
 
@@ -134,7 +134,7 @@ color: #555;
   height: 550px;
   margin-bottom: 0px;
   overflow: scroll;
-  border-radius: 8px 0 0 8px;
+  border-radius: 15px 0 0 15px;
 }
 
 table {
@@ -160,7 +160,7 @@ table {
 #map-canvas {
   border: 1px solid gray;
   height: 550px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 15px 15px 0;
 }
 
 /*styling for signin/singup pages*/
@@ -370,4 +370,3 @@ thead {
 .devise-signup-btn {
   font-size: 18px;
 }
-
