@@ -31,11 +31,13 @@ body{
 
 .rightdiv {
   border: solid;
+  border-radius: 15px;
   height: 550px;
 }
 
 .results {
   border: solid;
+  border-radius: 15px;
   height: 507px;
   overflow: scroll;
 }
@@ -50,6 +52,7 @@ table {
 
 #map-canvas {
   border: solid;
+  border-radius: 15px;
   height: 550px;
 }
 
@@ -107,4 +110,3 @@ table {
 .btn-search {
   display: inline-block;
 }
-

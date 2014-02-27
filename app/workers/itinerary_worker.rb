@@ -8,7 +8,7 @@ class ItineraryWorker
 
     recurrence { hourly }
 
-    def perform_scrape
+    def perform
         agent = Mechanize.new
         #Mechanize scrapes site
         # event_date = params[:date]
@@ -22,13 +22,11 @@ class ItineraryWorker
                 event_title = result_page.search('.title').text.partition('|').first.strip #display title by CSS selector
                 address = result_page.search("//b[contains(., 'Address')]/..").text.partition(':').last.strip #pull address by xpath
                 event_date = result_page.search("#stats .left > a").text
-                # event_desc = result_page.search(".clearfloat > p").text.strip
                 # Save to the model
                 unless address == nil #address might be empty ""; check that out later
                     event = Funcheap.find_or_create_by(name: event_title)
                     event.full_address = address
                     event.date = event_date
-                    # event.description = event_desc
                     event.save
                 end
             end

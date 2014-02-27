@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 DatePlannerApp::Application.routes.draw do
   devise_for :users
 
@@ -9,8 +11,9 @@ DatePlannerApp::Application.routes.draw do
   get '/funcheaps', to: 'funcheaps#perform_scrape'
   post '/funcheaps', to: 'funcheaps#create'
 
-
   resources :itineraries, :users
+
+  mount Sidekiq::Web => '/sidekiq'
 
   # get    '/users/sign_in',        to: 'devise/sessions#new', as: :new_user_session
   # post   '/users/sign_in',        to: 'devise/sessions#create', as: :user_session
