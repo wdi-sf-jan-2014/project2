@@ -55,4 +55,5 @@ function onItemClick(event, pin) {
 }  
 
 
-google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'load', initialize);
+$(document).on('ready page:load', initialize);

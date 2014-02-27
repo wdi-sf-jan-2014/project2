@@ -1,8 +1,47 @@
-<div class="container">
-  <h4>Hello <%= @user.email %>'s</h4> <br>
-  Here is your list of itineraries:
+<div class="container" id="profile_page">
+  <h3>Hello <%= @user.email %>'s</h3> <br>
+  <h4>Here is your list of itineraries:</h4>
 
   <div class="myItineraries">
-
+    <table>
+      <colgroup>
+        <col class="col-sm-4" />
+        <col class="col-sm-8" />
+      </colgroup>
+      <thead>
+        <tr>
+          <td><h3>Date</h3></td>
+          <td><h3>Activity</h3></td>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_date = " " %>
+        <% @events.each do |i| %>
+          <% if current_date == i.date %>
+          <tr>
+            <td></td>
+            <% i.funcheaps.each do |f| %>
+              <td><%= f.name %></td>
+            <% end %>
+            <% i.restaurants.each do |r| %>
+              <td><%= r.name %></td>
+            <% end %>
+          </tr>
+          <% else %>
+          <tr>
+            <td><%= i.date %></td>
+            <% i.funcheaps.each do |f| %>
+              <td><%= f.name %></td>
+            <% end %>
+            <% i.restaurants.each do |r| %>
+              <td><%= r.name %></td>
+            <% end %>
+          </tr>
+          <% end %>
+          <% current_date = i.date %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
+  
 </div>
