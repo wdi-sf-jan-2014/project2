@@ -1,17 +1,12 @@
-// // ititiating google maps
-// function initialize(){
 
-//   var map = new google.maps.Map(document.getElementById('map-canvas'), {
-//     zoom: 12,
-//     center: new google.maps.LatLng(37.754, -122.435),
-//   });
-// }
-// $(document).on('ready page:load', initialize);
+var site_initialize = function() {
+	// Adds calendar date picking capability
+  $("#itinerary_date").datepicker();
 
-// initiating datepicker functionality
-$(function() {
-	$("#itinerary_date").datepicker();
-});
+  // Hides spinner image
+  $("#spinwheel").hide();
 
+};
 
+$(document).on('ready page:load', site_initialize);
 

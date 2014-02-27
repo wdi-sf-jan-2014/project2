@@ -31,7 +31,7 @@
      
     <div class="col-sm-2">
       <div class="itinerary">
-        <a href="#itineraryModal" role="button" class="btn btn-lg btn-success" data-toggle="modal">View Itinerary</a>
+        <a href="#itineraryModal" role="button" class="btn btn-md btn-warning" data-toggle="modal">View Itinerary</a>
       </div>
       <!-- modal for VIEW ITINERARY -->
       <%= render partial: "itineraries/viewItineraryModal" %>
@@ -50,6 +50,9 @@
 
   <!-- Main div for results list and map -->
   <div class="row">
+    <div id="spinwheel" class="col-sm-12 spinwheel-holder"> <!-- Div for spinwheel image -->
+      <img src="https://webspace.utexas.edu/cokerwr/www/index.html/pinwheel.gif" />
+    </div>
     <!-- Results div -->
     <div class="rightdiv col-sm-4">
       <h4>Search Results:</h4>
