@@ -134,7 +134,6 @@ color: #555;
   height: 550px;
   margin-bottom: 0px;
   overflow: scroll;
-  border-radius: 15px 0 0 15px;
 }
 
 table {
@@ -207,7 +206,7 @@ h3#heading {
   font-size: 30px;
 }
 
-h4 {
+h4.table_title {
   font-family: 'Varela Round', sans-serif;
   font-weight: bolder;
   font-size: 25px;
