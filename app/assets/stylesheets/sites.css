@@ -207,7 +207,7 @@ h3#heading {
   font-size: 30px;
 }
 
-h4 {
+h4.table_title {
   font-family: 'Varela Round', sans-serif;
   font-weight: bolder;
   font-size: 25px;
