@@ -2,11 +2,25 @@
 <html>
 <head>
   <title>DatePlannerApp</title>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['SECRET_GOOGLE_KEY']%>&sensor=true">
+  </script>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<%= render partial: "sites/navbar" %>
+
+<% if notice %>
+  <p class="alert alert-success alert-dissmissable"><%= notice %><button type="button" class="close" data-dismiss="alert" aria-hidden="ture">&times;</button></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-info alert-dissmissable"><%= alert %><button type="button" class="close" data-dismiss="alert" aria-hidden="ture">&times;</button></p>
+<% end %>
 
 <%= yield %>
 

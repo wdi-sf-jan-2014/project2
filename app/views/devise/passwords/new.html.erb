@@ -1,0 +1,19 @@
+<body class="devise-pages-body">
+	<div class="signin-contain">
+		<div class="home-signin">
+			<h2>Forgot Your Password?</h2>
+
+			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+			  <%= devise_error_messages! %>
+
+			  <%= f.email_field :email, :autofocus => true, placeholder: "Email", class: "devise-input-field" %>
+
+			  <%= f.submit "Send Me Reset Password Instructions", class: "btn btn-warning pw-btn" %>
+			<% end %>
+			<div class="modal-footer">
+				<%= button_to "Sign In", "/users/sign_in", method: :get, class: "btn btn-primary pw-signupin" %>
+				<%= button_to "Sign Up", "/users/sign_in", method: :get, class: "btn btn-success pw-signupin" %>
+		</div>
+		</div>
+	</div>
+</div>

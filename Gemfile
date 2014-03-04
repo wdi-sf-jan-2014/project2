@@ -3,8 +3,38 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'mechanize'
+gem 'nokogiri'
+gem 'devise'
+gem 'pg'
+gem 'json'
+gem 'typhoeus'
+gem 'jquery-ui-rails' # gem needed for datepicker functionality
+
+# gems needed for yelp API
+gem 'yelpster', '~> 1.2.0'
+gem 'oauth'
+gem 'geocoder' # To populate latitude and longitude from address field
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'dotenv-rails'
+end
+
+# Use unicorn as the app server
+gem 'unicorn'
+
+gem 'sidekiq'
+gem 'sidetiq'
+gem "ice_cube", "~> 0.11.3"
+gem 'sinatra', require: false
+gem 'slim'
+
+gem 'rails_12factor', :group => :production
+
+gem 'handlebars_assets'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

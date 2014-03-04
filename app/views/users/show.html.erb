@@ -1,0 +1,50 @@
+<body class="profile_page">
+<div class="container profile_container">
+  <h2 class="user_email"><%= @user.email %></h2>
+  <h3 id="heading">My itineraries:</h3>
+
+  <!-- itinerary table -->
+  <div>
+    <table id="my_itineraries" class="col-sm-8 col-sm-offset-2">
+      <colgroup>
+        <col class="col-sm-3" />
+        <col class="col-sm-7" />
+      </colgroup>
+      <thead>
+        <tr>
+          <td><h4 class="table_title">Date</h4></td>
+          <td><h4 class="table_title">Activity</h4></td>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_date = " " %>
+        <% @events.each do |i| %>
+          <% if current_date == i.date %>
+          <tr>
+            <td></td>
+            <% i.funcheaps.each do |f| %>
+              <td><%= f.name %> : <%= f.full_address %></td>
+            <% end %>
+            <% i.restaurants.each do |r| %>
+              <td><%= r.name %></td>
+            <% end %>
+          </tr>
+          <% else %>
+          <tr>
+            <td><%= i.date %></td>
+            <% i.funcheaps.each do |f| %>
+              <td><%= f.name %></td>
+            <% end %>
+            <% i.restaurants.each do |r| %>
+              <td><%= r.name %> : <%= r.full_address %></td>
+            <% end %>
+          </tr>
+          <% end %>
+          <% current_date = i.date %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+ 
+</div>
+</body>

@@ -1,0 +1,25 @@
+    <div class="col-sm-4">
+      <form accept-charset="UTF-8" action="/yelpfinds" class="new_yelpfind" id="new_yelpfind" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="vDC9W9LjOCVXbABGWOG7T5ufWcQZzfLMAgwOQTiLX8M=" /></div>
+        <input class="input-field" id="yelpfind_searchterm" name="yelpfind[searchterm]" placeholder="What are you craving?" type="text" /><br />
+        <input class="input-field" id="yelpfind_address" name="yelpfind[address]" placeholder="Street Address" type="text" /><br />
+        <input class="input-field" id="yelpfind_city" name="yelpfind[city]" placeholder="City" type="text" /><br />
+        <input class="input-field" id="yelpfind_state" name="yelpfind[state]" placeholder="State" type="text" /><br />
+        <input class="input-field" id="yelpfind_zipcode" name="yelpfind[zipcode]" placeholder="5-digit Zipcode" type="text" /><br />
+        <label class="select-field-label" for="yelpfind_Search Radius: ">Search radius: </label>
+        <select id="yelpfind_searchradius" name="yelpfind[searchradius]">
+        	<option value="0.1">Tenth Mile</option>
+					<option value="0.25">Quarter Mile</option>
+					<option value="0.5">Half Mile</option>
+					<option value="1">1 Mile</option>
+					<option value="5">5 Miles</option>
+					<option value="10">10 Miles</option>
+					<option value="25">25 Miles</option></select><br />
+        <label class="select-field-label" for="yelpfind_Number of Results: ">Number of results: </label>
+        <select id="yelpfind_resultslimit" name="yelpfind[resultslimit]">
+        	<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option></select><br />
+       
+			</form>
+		</div>

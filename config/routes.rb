@@ -1,56 +1,47 @@
+require 'sidekiq/web'
+
 DatePlannerApp::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  devise_for :users
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: 'sites#index'
+  post '/wingman', to: 'sites#create'
+  get '/wingman', to: 'sites#index'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get '/funcheaps', to: 'funcheaps#perform_scrape'
+  post '/funcheaps', to: 'funcheaps#create'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  resources :itineraries, :users
+  post '/senditineraries', to: 'itineraries#index'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  mount Sidekiq::Web => '/sidekiq'
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  # get    '/users/sign_in',        to: 'devise/sessions#new', as: :new_user_session
+  # post   '/users/sign_in',        to: 'devise/sessions#create', as: :user_session
+  # delete '/users/sign_out',       to: 'devise/sessions#destroy', as: :destroy_user_session
+  # post   '/users/password',       to: 'devise/passwords#create', as: :user_password
+  # get    '/users/password/new',   to: 'devise/passwords#new', as: :new_user_password
+  # get    '/users/password/edit',  to: 'devise/passwords#edit', as: :edit_user_password
+  # patch  '/users/password',       to: 'devise/passwords#update'
+  # put    '/users/password',       to: 'devise/passwords#update'
+  # get    '/users/cancel',         to: 'devise/registrations#cancel', as: :cancel_user_registration
+  # post   '/users',                to: 'devise/registrations#create', as: :user_registration
+  # get    '/users/sign_up',        to: 'devise/registrations#new', as: :new_user_registration
+  # get    '/users/edit',           to: 'devise/registrations#edit', as: :edit_user_registration
+  # patch  '/users',                to: 'devise/registrations#update'
+  # put    '/users',                to: 'devise/registrations#update'
+  # delete '/users',                to: 'devise/registrations#destroy'
+#                     root GET    /                               sites#index
+#                  wingman GET    /wingman(.:format)              sites#index
+#                yelpfinds POST   /yelpfinds(.:format)            yelpfinds#create
+#                funcheaps GET    /funcheaps(.:format)            funcheaps#perform_scrape
+#                          POST   /funcheaps(.:format)            funcheaps#create
+#              itineraries GET    /itineraries(.:format)          itineraries#index
+#                          POST   /itineraries(.:format)          itineraries#create
+#            new_itinerary GET    /itineraries/new(.:format)      itineraries#new
+#           edit_itinerary GET    /itineraries/:id/edit(.:format) itineraries#edit
+#                itinerary GET    /itineraries/:id(.:format)      itineraries#show
+#                          PATCH  /itineraries/:id(.:format)      itineraries#update
+#                          PUT    /itineraries/:id(.:format)      itineraries#update
+#                          DELETE /itineraries/:id(.:format)      itineraries#destroy
+  
 end

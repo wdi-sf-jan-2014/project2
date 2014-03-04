@@ -1,0 +1,13 @@
+<H4><%=@user.email%> has shared their date itinerary with you. It's listed below.</h4>
+
+<%@itinerary.each do |event|%>
+  <p>
+    <%=event["date"]%>
+    <br>
+    <%=event["name"]%>
+    <br>
+    <%=event["full_address"]%>
+    <br>
+    <br>
+  </p>
+<%end%>

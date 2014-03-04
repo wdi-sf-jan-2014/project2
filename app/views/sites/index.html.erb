@@ -1,0 +1,88 @@
+<div class="container">
+
+<!-- Top div for search filters -->
+  <div class="row">
+
+    <!-- Activity filter -->
+    <div class="col-sm-5">
+      <div class="input-group">
+        <input type="text" id="activity_selector" class="form-control" placeholder="What would you like to do?">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Activity <span class="caret"></span></button>
+          <ul id="select_source" class="dropdown-menu pull-right">
+            <li><a href="#">Fun & Cheap</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Concerts</a></li>
+          </ul>
+        </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+    </div><!-- /.col-sm-4 -->
+
+    <!-- Day filter -->
+    <div class="col-sm-4 col-sm-offset-1">
+      <div class="dayfilter">
+        <%= form_for :itinerary, url: "/funcheaps" do |f| %>
+          <%= f.label "Date:", class: "date-field-label" %>
+          <%= f.text_field :date, value: Time.now.strftime("%m/%d/%Y"), class: "date-field" %>
+        <% end %>
+      </div>
+      <button id="search_button" class="btn btn-primary btn-search">Search</button>
+    </div><!-- /.col-sm-4 -->
+     
+    <div class="col-sm-2">
+      <div class="itinerary">
+        <a href="#itineraryModal" role="button" class="btn btn-md btn-warning" data-toggle="modal">View Itinerary</a>
+      </div>
+      <!-- modal for VIEW ITINERARY -->
+      <%= render partial: "itineraries/viewItineraryModal" %>
+    </div>
+
+    <!-- div for fading in and out of restaurant query form html -->
+    <div id="restaurantForm">
+    </div>
+
+  </div><!-- /.row -->
+
+  
+
+  <br>
+  <br>
+
+  <!-- Main div for results list and map -->
+  <div class="row">
+    <div id="spinwheel" class="col-sm-12 spinwheel-holder"> <!-- Div for spinwheel image -->
+      <img src="https://webspace.utexas.edu/cokerwr/www/index.html/pinwheel.gif" />
+    </div>
+    <div class="col-sm-12 search-header">
+      <h2>Search Results</h2>
+    </div>
+    <!-- Results div -->
+    <div class="leftdiv col-sm-4">
+      <div class="results">
+        <table id="resultsTable" class="table table-striped">
+          <!-- data to be populated from Handlebars template result_list.hbs -->
+        </table>
+      </div>
+    </div> <!-- /Results div -->
+    <!-- Map div -->
+    <div class="rightdiv col-sm-8">
+      <div id="map-canvas"></div>
+    </div> <!-- /Map div -->
+  </div> <!-- /Main div for results list and map -->
+
+</div>
+
+<!--
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 50; padding: 50 }
+      #map-canvas { height: 100% }
+    </style> -->
+   
+
+
+
+   
+
+
+
